@@ -1,9 +1,9 @@
 ---
 name: BasicTemplate
 about: 기본 템플릿입니다. (모든 이슈에 사용됩니다.)
-title: ''
+title: "[ML] 제목을 입력해주세요"
 labels: ''
-assignees: hurontrara
+assignees: ''
 
 ---
 
@@ -21,6 +21,7 @@ assignees: hurontrara
 
 ## 비고
 
-- 내용을 적어주세요.
+- 내용을 적어주세요. ( 프로젝트에 이슈 단위로 보여지므로, 제목 태그를 ML로 유지해주세요. )
+ex ) [ML] 코드 시각화
 
 <br>
