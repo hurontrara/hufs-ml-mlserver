@@ -24,6 +24,9 @@ def modeling():
         wordToVector = wordToVector.reshape((1, 200))
         input_pca = pca_model.transform(wordToVector)
         outputClusterNum = kMeansModel.predict(input_pca)
+        outputClusterNum = str(outputClusterNum)
+        outputClusterNum = outputClusterNum.replace('[', '')
+        outputClusterNum = outputClusterNum.replace(']', '')
 
         responseDict = {'clusterNum': "{}".format(outputClusterNum)}
         response = make_response(responseDict)
