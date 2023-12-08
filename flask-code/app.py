@@ -1,17 +1,17 @@
 from flask import Flask, Response, request, jsonify, make_response
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
 import joblib
 import gensim
-import traceback
 import numpy as np
+import pickle
 
 app = Flask(__name__)
-kMeansModel = joblib.load('../../muchu-mlserver/API_SERVER/KMEANS-200vec-75cluster.txt')
 W2Vmodel = gensim.models.Word2Vec.load('ko.bin')
-
-
-# PCA
-# 로컬 이슈
-# EC2 관련해서 잘 돌아가도록
+with open("KMEANS_model", 'rb') as f:
+    kMeansModel = pickle.load(f)
+with open('pca_model.pkl', 'rb') as pca_file:
+    pca_model = pickle.load(pca_file)
 
 
 @app.route('/k-means', methods=['POST'])
@@ -22,8 +22,8 @@ def modeling():
 
         wordToVector = W2Vmodel[word]  # shape  (1, 200)
         wordToVector = wordToVector.reshape((1, 200))
-        wordToVector = wordToVector.astype(np.double)
-        outputClusterNum = kMeansModel.predict(wordToVector)[0]
+        input_pca = pca_model.transform(wordToVector)
+        outputClusterNum = kMeansModel.predict(input_pca)
 
         responseDict = {'clusterNum': "{}".format(outputClusterNum)}
         response = make_response(responseDict)
