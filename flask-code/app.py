@@ -38,17 +38,17 @@ def modeling():
 
         responseDict = {'errorMessage': "존재하지 않는 단어입니다."}
         response = make_response(responseDict)
-        response.status_code = 400
+        response.status_code = 200
 
         return response
 
     except:
         responseDict = {'errorMessage': "서버 내부 에러입니다."}
         response = make_response(responseDict)
-        response.status_code = 500
+        response.status_code = 200
 
         return response
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=False)
