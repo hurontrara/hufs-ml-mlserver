@@ -38,14 +38,14 @@ def modeling():
 
         responseDict = {'errorMessage': "존재하지 않는 단어입니다."}
         response = make_response(responseDict)
-        response.status_code = 400
+        response.status_code = 200
 
         return response
 
     except:
         responseDict = {'errorMessage': "서버 내부 에러입니다."}
         response = make_response(responseDict)
-        response.status_code = 500
+        response.status_code = 200
 
         return response
 
