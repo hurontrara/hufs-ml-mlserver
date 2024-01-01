@@ -7,13 +7,9 @@
 
 검색 기능을 통해 키워드에 맞는 무한도전 짤을 추천해주고, 사용자가 좋아할 만한 짤을 추천해주는 서비스
 
-- 최소 기능 (MVP) ( 나중에 좀 더 자세히 )
+- 최소 기능 (MVP)
 
-  - 인증 권한 : 로그인 
-   
-  - 키워드를 통한 검색
- 
-  - 짤에 대한 선호 저장 (좋아요 기능)
+  - 백엔드 서버와의 통신(백엔드 서버를 통해 단어를 받아 모델(PCA, K-means)에 넣고, 출력을 반환)
 
 <br>
 
@@ -111,26 +107,17 @@ Related to: # 14
 ## MLServer
 
 ### ✨ 기술 설명
-Python, Scikit-learn 등을 통해 머신러닝 서버 개발
+Python, Scikit-learn, Flask 등을 통해 머신러닝 서버 개발
 
 ### 🔥 기술 스택
 
 |  **항목**  |  **기술 스택**                          |
 | ---------- | --------------------------------------- |
 | 사용언어    | Python                                  |
-| CI/CD      | AWS EC2, Github Actions                 |
-| ML         | Scikit-learn                            |
+| 서버       | AWS EC2, Flask                           |
+| ML        | Scikit-learn                            |
 | 시각화     | Seaborn, Matplotlib                      |
 
-### 🔅 코드 컨벤션
-
-|  **항목**  |    **규칙**            |
-| ---------- | ---------------------- |
-| Package    | camelCase              |
-| File       | PascalCase             |
-| Constant   | UPPER_SNAKE_CASE       |
-| Variable   | camelCase              |
-| Function   | camelCase              |
 
 
 ### ✔ 추가 라이브러리 & 버전 정보
@@ -138,6 +125,7 @@ Python, Scikit-learn 등을 통해 머신러닝 서버 개발
 |  **항목**  |  **버전 정보**      |
 | ---------- | ------------------ |
 | Python     |  v3.8.8            |
+| Flask      |  v2.3.3            |
 
 
 <br>
